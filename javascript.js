@@ -129,4 +129,4 @@ function playGame() {
     }
 }
 
-playGame();    // calll playGame()
+playGame();    // call playGame()
