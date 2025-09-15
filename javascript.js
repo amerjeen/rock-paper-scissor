@@ -40,59 +40,6 @@ function getHumanChoice() {
 let humanScore = 0;
 let computerScore = 0;
 
-// 4. Play a round:
-//     - Write `playRound(humanChoice, computerChoice)`:
-//         > Use the previous choices as arguments
-//             // `humanChoice` needs to be case-insensitive
-//     - Log "Rock, Paper, Scissors, Shoot!", followed by:
-//         > “You win! Paper beats Rock”
-//         > “You win! Scissors beats Paper”
-//         > “You win! Rocks beats Scissors”
-//         > “You lose! Paper beats Rock”
-//         > “You lose! Scissors beats Paper”
-//         > “You lose! Rocks beats Scissors”
-//     - increment `humanScore` or `computerScore` based on round winner 
-
-function playRound(humanChoice, computerChoice) {
-    console.log("Rock, Paper, Scissors, Shoot!");
-
-    switch (humanChoice + " vs " + computerChoice) {
-        case "paper vs rock":
-            humanScore++;
-            console.log("You win! Paper beats Rock.");
-            console.log(`The score is: human ${humanScore} - computer ${computerScore}`);
-            break;
-        case "scissors vs paper":
-            humanScore++;
-            console.log("You win! Scissors beats Paper.");
-            console.log(`The score is: human ${humanScore} - computer ${computerScore}`);
-            break;
-        case "rock vs scissors":
-            humanScore++;
-            console.log("You win! Rock beats Scissors.");
-            console.log(`The score is: human ${humanScore} - computer ${computerScore}`);
-            break;
-        case "rock vs paper":
-            computerScore++;
-            console.log("You lose! Paper beats Rock.");
-            console.log(`The score is: human ${humanScore} - computer ${computerScore}`);
-            break;
-        case "paper vs scissors":
-            computerScore++;
-            console.log("You lose! Scissors beats Paper.");
-            console.log(`The score is: human ${humanScore} - computer ${computerScore}`);
-            break;
-        case "scissors vs rock":
-            computerScore++;
-            console.log("You lose! Rock beats Scissors.");
-            console.log(`The score is: human ${humanScore} - computer ${computerScore}`);
-            break;
-        default:
-            console.log("This round is a tie!");
-            console.log(`The score is: human ${humanScore} - computer ${computerScore}`);
-    }
-}
-
 // 5. Play a game:
 //     - Write `playGame()`:
 //         > It encloses `playRound()`
@@ -102,6 +49,64 @@ function playRound(humanChoice, computerChoice) {
 //             // If you already know about loops, you can use them. If not, don’t worry! Loops will be covered in the next lesson.
 
 function playGame() {
+    // 4. Play a round:
+    //     - Write `playRound(humanChoice, computerChoice)`:
+    //         > Use the previous choices as arguments
+    //             // `humanChoice` needs to be case-insensitive
+    //     - Log "Rock, Paper, Scissors, Shoot!", followed by:
+    //         > “You win! Paper beats Rock”
+    //         > “You win! Scissors beats Paper”
+    //         > “You win! Rocks beats Scissors”
+    //         > “You lose! Paper beats Rock”
+    //         > “You lose! Scissors beats Paper”
+    //         > “You lose! Rocks beats Scissors”
+    //     - increment `humanScore` or `computerScore` based on round winner 
+
+    function playRound(humanChoice, computerChoice) {
+        // Helper function to capitalize first letter
+        function capitalize(word) {
+            return word.charAt(0).toUpperCase() + word.slice(1);
+        }
+
+        console.log("Rock, Paper, Scissors, Shoot!");
+
+        switch (humanChoice + " vs " + computerChoice) {
+            case "paper vs rock":
+                humanScore++;
+                console.log("You win! Paper beats Rock.");
+                console.log(`The score is: human ${humanScore} - computer ${computerScore}`);
+                break;
+            case "scissors vs paper":
+                humanScore++;
+                console.log("You win! Scissors beats Paper.");
+                console.log(`The score is: human ${humanScore} - computer ${computerScore}`);
+                break;
+            case "rock vs scissors":
+                humanScore++;
+                console.log("You win! Rock beats Scissors.");
+                console.log(`The score is: human ${humanScore} - computer ${computerScore}`);
+                break;
+            case "rock vs paper":
+                computerScore++;
+                console.log("You lose! Paper beats Rock.");
+                console.log(`The score is: human ${humanScore} - computer ${computerScore}`);
+                break;
+            case "paper vs scissors":
+                computerScore++;
+                console.log("You lose! Scissors beats Paper.");
+                console.log(`The score is: human ${humanScore} - computer ${computerScore}`);
+                break;
+            case "scissors vs rock":
+                computerScore++;
+                console.log("You lose! Rock beats Scissors.");
+                console.log(`The score is: human ${humanScore} - computer ${computerScore}`);
+                break;
+            default:
+                console.log(`This round is a tie! ${capitalize(humanChoice)} vs ${capitalize(computerChoice)}.`);
+                console.log(`The score is: human ${humanScore} - computer ${computerScore}`);
+        }
+    }
+
     humanScore = 0;    // reset scores for a new game
     computerScore = 0;
 
