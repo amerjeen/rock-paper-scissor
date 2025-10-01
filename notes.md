@@ -1,10 +1,9 @@
---- 1. UNDERSTANDING THE PROBLEM ---
+### 1. UNDERSTANDING THE PROBLEM
 
 "Rock, Paper, Scissors is a hand game for two or more players where each person simultaneously makes one of three shapes: a fist for rock, a flat hand for paper, or two fingers extended for scissors. The winning rules are: Rock beats Scissors, Scissors beats Paper, and Paper beats Rock. Players chant "Rock, Paper, Scissors, Shoot!" and reveal their chosen shape on "Shoot!" to determine the outcome".
 
 
-
---- 2. PLANNING ---
+### 2. PLANNING ---
 
 Does your program have an interface? What will it look like?
 No, it will be a console program.
@@ -26,8 +25,7 @@ What’s the desired output?
 - The string "Rock, Paper, Scissors, Shoot!" => followed by the result
 
 
-
---- 3. PSEUDOCODE ---
+### 3. PSEUDOCODE ---
 
 1. Computer choice:
     - Write `getComputerChoice()`:
@@ -56,6 +54,7 @@ What’s the desired output?
         > “You lose! Rocks beats Scissors”
     - increment `humanScore` or `computerScore` based on round winner 
 
+```
 /*
 function playRound(humanChoice, computerChoice) {
   // your code here!
@@ -66,6 +65,7 @@ const computerSelection = getComputerChoice();
 
 playRound(humanSelection, computerSelection);
 */
+```
 
 5. Play a game:
     - Write `playGame()`:
